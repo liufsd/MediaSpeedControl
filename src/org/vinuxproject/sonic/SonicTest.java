@@ -77,8 +77,10 @@ public class SonicTest extends Activity
     			}
     			
     		}else {
-            	Intent intent = new Intent(this,SoundService.class);
-                bindService(intent, conn, Context.BIND_AUTO_CREATE);
+				binder.setDataSourceString(0, "/sdcard/eudb_fr/.media/.articles_mp3/79302fbb-b01c-40bc-bd42-827c284551ad.mp3");
+				binder.prepare(0);
+				binder.start(0);
+                mComplete = false;
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -193,9 +195,7 @@ public class SonicTest extends Activity
 					});
 					binder.setDataSourceString(0, "/sdcard/eudb_fr/.media/.articles_mp3/79302fbb-b01c-40bc-bd42-827c284551ad.mp3");
 					binder.prepare(0);
-//					binder.setPlaybackSpeed(0, (float) 1.5);
 					binder.start(0);
-					Log.e("TAG", "binder.isPlaying(0) : "+binder.isPlaying(0));
 				} catch (RemoteException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
