@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1" >
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="Speed"
+                android:textSize="32sp" />
+
+            <EditText
+                android:id="@+id/speed"
+                android:layout_column="2"
+                android:inputType="numberDecimal"
+                android:text="1.0"
+                android:textSize="32sp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="Pitch"
+                android:textSize="32sp" />
+
+            <EditText
+                android:id="@+id/pitch"
+                android:layout_column="2"
+                android:inputType="numberDecimal"
+                android:text="1.0"
+                android:textSize="32sp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="Rate"
+                android:textSize="32sp" />
+
+            <EditText
+                android:id="@+id/rate"
+                android:layout_column="2"
+                android:inputType="numberDecimal"
+                android:text="1.0"
+                android:textSize="32sp" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="play"
+        android:text="Play"
+        android:textSize="48sp" />
+
+</LinearLayout>
