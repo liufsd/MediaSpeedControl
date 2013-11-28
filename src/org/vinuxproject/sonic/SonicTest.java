@@ -27,6 +27,7 @@ import com.aocate.presto.service.*;
 
 public class SonicTest extends Activity
 {
+
 	private IPlayMedia_0_8.Stub binder;
 	private boolean mComplete;
     @Override
@@ -77,7 +78,8 @@ public class SonicTest extends Activity
     			}
     			
     		}else {
-				binder.setDataSourceString(0, "/sdcard/eudb_fr/.media/.articles_mp3/79302fbb-b01c-40bc-bd42-827c284551ad.mp3");
+    			//support to  play next file.
+				binder.setDataSourceString(0, "http://static.frdic.com/MediaPool/7f111f7f-5d00-4682-8d20-1e90d6a1f4c7/data/27457593-fe0b-4dc5-bb40-7c85e85b1299.mp3");
 				binder.prepare(0);
 				binder.start(0);
                 mComplete = false;
@@ -209,5 +211,13 @@ public class SonicTest extends Activity
 			
 		}
     };
-    
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		if (conn!=null) {
+			unbindService(conn);
+		}
+	}
+ 
 }
